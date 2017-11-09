@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
    	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
 </head>
 <body>
 	
@@ -25,13 +25,11 @@
 				<div id="row2" class="row">
 					<div class="col-md-6">
 						<div>
-							<p>Press any key to get started!</p>
+							<button id="playBtn">Click to play</button>
+							<p id="demo">
 						</div>
 						<div>
 							<p> WINS </p>
-						</div>
-						<div>
-							<p>Letters already guessed</p>	
 						</div>
 					</div>
 		
@@ -41,6 +39,9 @@
 						</div>
 						<div>						
 							<p>Number of guesses remaining</p>
+						</div>
+						<div>
+							<p>Letters already guessed</p>	
 						</div>
 					</div>
 				</div>
@@ -63,12 +64,17 @@
 	    "Mums"
     ];
 
-    var newWord = wordList[Math.floor(Math.random() * wordList.length)];
 
-
+	document.getElementById("playBtn").addEventListener("click", function() {
+    	function newWord(wordList) {
+  		return wordList[Math.floor(Math.random() * wordList.length)];
+	}
+	
+	for (var i = 0; i < 1; i++) {
+  	console.log(newWord(wordList));
+   }
+   })
 
 </script>
-
-
 </body>
 </html>

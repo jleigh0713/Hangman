@@ -6,9 +6,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
    	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
- 	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
 </head>
 <body>
+
 	
 	<h1>Garden Hangman</h1>
 
@@ -26,7 +26,6 @@
 					<div class="col-md-6">
 						<div>
 							<button id="playBtn">Click to play</button>
-							<p id="demo">
 						</div>
 						<div>
 							<p> WINS </p>
@@ -41,7 +40,8 @@
 							<p>Number of guesses remaining</p>
 						</div>
 						<div>
-							<p>Letters already guessed</p>	
+							<p>Letters already guessed</p>
+							<div id="display"></div>	
 						</div>
 					</div>
 				</div>
@@ -49,31 +49,44 @@
 		</div>
 	</div>
 
-    <script type="text/javascript">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script type="text/javascript">
+    $(document).ready(function() 
+    {
 
-    var wordList = [
-    	"Turnips",
-      	"Beets",
-	    "Parsnips",
-	    "Garlic",
-	    "Lettuce",
-	    "Chives",
-	    "Nasturtium",
-	    "Lavender",
-	    "Onions",
-	    "Mums"
-    ];
+    	var wordList = [
+	    	"Turnips",
+	      	"Beets",
+		    "Parsnips",
+		    "Garlic",
+		    "Lettuce",
+		    "Chives",
+		    "Nasturtium",
+		    "Lavender",
+		    "Onions",
+		    "Mums"
+    	];
+
+    	var ltrsGuessed = [
 
 
-	document.getElementById("playBtn").addEventListener("click", function() {
-    	function newWord(wordList) {
-  		return wordList[Math.floor(Math.random() * wordList.length)];
-	}
-	
-	for (var i = 0; i < 1; i++) {
-  	console.log(newWord(wordList));
-   }
-   })
+
+    	]
+
+		document.getElementById("playBtn").addEventListener("click", function() 
+		{
+    		function newWord(wordList)
+    		{
+    			alert("Select your letters");
+  				return wordList[Math.floor(Math.random() * wordList.length)];
+  			}		
+		
+			for (var i = 0; i < 1; i++) 
+			{
+  			console.log(newWord(wordList));
+	    	}
+		})
+	})
 
 </script>
 </body>
